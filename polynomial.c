@@ -3,7 +3,7 @@
 #ifdef _WINDOWS
 #include <malloc.h>
 #include <inttypes.h>
-#endif 
+#endif /* _WINDOWS */
 #include <stdint.h>
 
 #include "polynomial.h"
