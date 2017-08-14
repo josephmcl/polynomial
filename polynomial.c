@@ -149,8 +149,8 @@ int32_t FunctionOfPolynomial(
                 temp *= _PowPolynomial(x->v[v], P->Exponents[n]);
                 v += 1;
                 n += 1;
-                a >>= 1;
             }
+            a >>= 1;
         }
         temp *= P->Coefficent[i]; /* Mul coef */
         rv += temp;
