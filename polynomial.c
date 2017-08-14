@@ -61,7 +61,7 @@ int AppendTermPolynomial(
             s += 1;
         x >>= 1;
     }
-    /* Don't expand the array is there are no exponents to add*/
+    /* Don't expand the array if there are no exponents to add*/
     if (s != 0 && 
         (P->Exponents = (int32_t *) realloc(P->Exponents, sizeof(int32_t *) * (P->Degree + s))) == NULL){
         fprintf(stderr, "Err in PolynomialAppendTerm: realloc (1)\n");
