@@ -105,21 +105,21 @@ uint8_t GetVariablesPolynomial(polynom_t *P){
 }
 
 int32_t _PowPolynomial(
-    int32_t x, 
-    int32_t n){
+    int32_t X, 
+    int32_t N){
 
     int i, d;
     int32_t rv;
     
-    d = (int) n;
-    rv = x;
+    d = (int) N;
+    rv = X;
     if (d > 0) {
         for (i = 1;i < d;++i)
-            rv *= x;
+            rv *= X;
     }
     else if (d < 0) {
         for (i = 1;i < d;++i)
-            rv /= x;
+            rv /= X;
     }
     else {
         return (int32_t) 1;
@@ -130,29 +130,31 @@ int32_t _PowPolynomial(
 
 int32_t FunctionOfPolynomial(
     polynom_t *P, 
-    polynom_var_t *x){
+    polynom_var_t *X){
 
-    int i, j, k, d, v, n;
+    int i, j, d, var, exp;
     int32_t rv, temp;
     uint8_t a, b;
 
     d = (int) P->Degree;
-    n = 0;
+    exp = 0;
     rv = (int32_t) 0;
-    for (i = 0;i < d; ++i){
+    for (i = 0;i < d; ++i) { /* term loop */
         a = P->Variables[i];
-        v = 0;
+        var = 0;
         b = (uint8_t) 1;
         temp = (int32_t) 1;
-        for (j = 0;j < 8; ++j){
-            if (a & b == 1){
-                temp *= _PowPolynomial(x->v[v], P->Exponents[n]);
-                n += 1;
+        for (j = 0;j < 8; ++j){ /* variable loop */
+            if (a & b == 1){ 
+                temp *= _PowPolynomial(
+                    X->v[var], 
+                    P->Exponents[exp]); 
+                exp += 1;
             }
-            v += 1;
+            var += 1;
             a >>= 1;
         }
-        temp *= P->Coefficent[i]; /* Mul coef */
+        temp *= P->Coefficent[i]; /* multiply by coefficent */
         rv += temp;
     }
 
