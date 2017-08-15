@@ -14,7 +14,7 @@ polynom_t *InitPolynomial();
  * of its members. Calls exit() on malloc() failure.
  */
 
-void DestoryPolynomial(
+void DestroyPolynomial(
 	polynom_t *P);
 /* Cleans up a polynom_t. Free all members and itself.
  */

@@ -33,7 +33,7 @@ polynom_t *InitPolynomial(){
 
     return rv;
 }
-void DestoryPolynomial(polynom_t *P){
+void DestroyPolynomial(polynom_t *P){
 
     if (P->Degree > (uint32_t) 0){
         free(P->Exponents);
