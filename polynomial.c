@@ -163,20 +163,19 @@ int32_t FunctionOfPolynomial(
 
 void PrintPolynomial(polynom_t *P){
 
-    int i, j, d, e, r;
+    int i, j, d, exp;
     uint8_t a, b;
 
     d = (int) P->Degree;
-    r = 0;
+    exp = 0;
     for (i = 0;i < d;++i){
         printf("+(%d", (int)P->Coefficent[i]);
-        e = (int) P->Terms[i];
         a = P->Variables[i];
         b = (uint8_t) 1;
         for (j = 0;j < 8;++j){
             if (a & b == 1){
-                printf("%c^%d", j + 65, P->Exponents[r]);
-                r += 1;
+                printf("%c^%d", j + 65, P->Exponents[exp]);
+                exp += 1;
             }
             a >>= 1;
             
