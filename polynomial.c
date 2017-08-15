@@ -178,7 +178,6 @@ void PrintPolynomial(polynom_t *P){
                 exp += 1;
             }
             a >>= 1;
-            
         }
         printf(")");
     }
