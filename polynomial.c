@@ -50,16 +50,16 @@ int AppendTermPolynomial(
     polynom_t *P){ 
 
     int i, j, s;
-    uint8_t x, b;
+    uint8_t a, b;
 
     j = 0; s = 0;
-    x = Variables;
+    a = Variables;
     b = (uint8_t) 1;
     P->Degree++;
     for(i = 0;i < 8;++i){
-        if (x & b == 1)
+        if (a & b == 1)
             s += 1;
-        x >>= 1;
+        a >>= 1;
     }
     /* Don't expand the array if there are no exponents to add*/
     if (s != 0 && 
@@ -118,8 +118,9 @@ int32_t _PowPolynomial(
             rv *= X;
     }
     else if (d < 0) {
-        for (i = 1;i < d;++i)
-            rv /= X;
+        for (i = -1;i > d;--i)
+            rv *= X;
+        rv = 1 / rv;
     }
     else {
         return (int32_t) 1;
