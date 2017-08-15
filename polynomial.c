@@ -167,9 +167,7 @@ void PrintPolynomial(polynom_t *P){
     d = (int) P->Degree;
     r = 0;
     for (i = 0;i < d;++i){
-        if ((int)P->Coefficent[i] < 0){
-            printf("-");
-        } else {
+        if ((int)P->Coefficent[i] >= 0){
             printf("+");
         }
         printf("%d", (int)P->Coefficent[i]);
