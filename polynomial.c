@@ -175,7 +175,7 @@ void PrintPolynomial(polynom_t *P){
         b = (uint8_t) 1;
         for (j = 0;j < 8;++j){
             if ((a & b) == 1){
-                printf("%c^%d", j + 65, P->Exponents[exp]);
+                printf("%c^%d", j + 97, P->Exponents[exp]);
                 exp += 1;
             }
             a >>= 1;
