@@ -5,7 +5,7 @@ typedef struct polynom_s polynom_t;
 /* A struct representing a polynomial. Supports up to 8 variables 
  * (indeterminates).
  */
-typedef struct polynom_var_s { int32_t v[8]; } polynom_var_t; 
+typedef struct polynom_var_s { float v[8]; } polynom_var_t; 
 /* A struct representing arguments to a function of a polynom_t. 
  */
 
@@ -28,7 +28,7 @@ int AppendTermPolynomial(
  * Variables represents the spesific variable to be used in the term. The nth 
  * set bit aligns with the n-1 index in Exponents.
  */
-int32_t FunctionOfPolynomial(
+float FunctionOfPolynomial(
 	polynom_t *P, 
     polynom_var_t *x);
 /* Returns the result of P(x) such that P is the function representing the 

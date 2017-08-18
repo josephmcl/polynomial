@@ -57,7 +57,7 @@ int AppendTermPolynomial(
     b = (uint8_t) 1;
     P->Degree++;
     for(i = 0;i < 8;++i){
-        if (a & b == 1)
+        if ((a & b) == 1)
             s += 1;
         a >>= 1;
     }
@@ -104,12 +104,12 @@ uint8_t GetVariablesPolynomial(polynom_t *P){
     return rv;
 }
 
-int32_t _PowPolynomial(
-    int32_t X, 
+float _PowPolynomial(
+    float X, 
     int32_t N){
 
     int i, d;
-    int32_t rv;
+    float rv;
     
     d = (int) N;
     rv = X;
@@ -120,33 +120,33 @@ int32_t _PowPolynomial(
     else if (d < 0) {
         for (i = -1;i > d;--i)
             rv *= X;
-        rv = 1 / rv;
+        rv = 1.0F / rv;
     }
     else {
-        return (int32_t) 1;
+        return 1.0F;
     }
 
     return rv;
 }
 
-int32_t FunctionOfPolynomial(
+float FunctionOfPolynomial(
     polynom_t *P, 
     polynom_var_t *X){
 
     int i, j, d, var, exp;
-    int32_t rv, temp;
+    float rv, temp;
     uint8_t a, b;
 
     d = (int) P->Degree;
     exp = 0;
-    rv = (int32_t) 0;
+    rv = 0.0F;
     for (i = 0;i < d; ++i) { /* term loop */
         a = P->Variables[i];
         var = 0;
         b = (uint8_t) 1;
-        temp = (int32_t) 1;
+        temp = 1.0F;
         for (j = 0;j < 8; ++j){ /* variable loop */
-            if (a & b == 1){ 
+            if ((a & b) == 1){ 
                 temp *= _PowPolynomial(
                     X->v[var], 
                     P->Exponents[exp]); 
@@ -156,7 +156,7 @@ int32_t FunctionOfPolynomial(
             a >>= 1;
         }
         temp *= P->Coefficent[i]; /* multiply by coefficent */
-        rv += temp;
+        rv += temp; //TODO: Implement a decimal type to ensure assoc.
     }
 
     return rv;
@@ -174,7 +174,7 @@ void PrintPolynomial(polynom_t *P){
         a = P->Variables[i];
         b = (uint8_t) 1;
         for (j = 0;j < 8;++j){
-            if (a & b == 1){
+            if ((a & b) == 1){
                 printf("%c^%d", j + 65, P->Exponents[exp]);
                 exp += 1;
             }
