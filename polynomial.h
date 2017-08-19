@@ -24,7 +24,7 @@ int AppendTermPolynomial(
     int32_t *Exponents,
     polynom_t *P);
 /* Returns 0 on success, 1 on failure. Variables represents the spesific 
- * variable to be used in the term. The nth set bit aligns with the n-1 index in 
+ * variable to be used in the term. The 0th set bit aligns with the 0 index in 
  * Exponents.
  */
 float FunctionOfPolynomial(
