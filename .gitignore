@@ -2,3 +2,5 @@
 out
 main.c
 Makefile
+plot.py
+out.png

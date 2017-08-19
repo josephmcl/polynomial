@@ -15,7 +15,7 @@ polynom_t *InitPolynomial();
  */
 
 void DestroyPolynomial(
-	polynom_t *P);
+    polynom_t *P);
 /* Cleans up a polynom_t. Free all members and itself.
  */
 int AppendTermPolynomial(
@@ -29,7 +29,7 @@ int AppendTermPolynomial(
  * set bit aligns with the n-1 index in Exponents.
  */
 float FunctionOfPolynomial(
-	polynom_t *P, 
+    polynom_t *P, 
     polynom_var_t *x);
 /* Returns the result of P(x) such that P is the function representing the 
  * polynomial P and x is an int32_t array containing arbitrary values for all 
@@ -38,7 +38,7 @@ float FunctionOfPolynomial(
 
 /*** Helpers ***/
 void PrintPolynomial(
-	polynom_t *P);
+    polynom_t *P);
 /* Prints a string representation of P.
  */
 #endif /* _POLYNOM_H */
