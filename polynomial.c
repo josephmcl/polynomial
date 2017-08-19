@@ -44,9 +44,9 @@ void DestroyPolynomial(polynom_t *P){
     free(P);
 }
 int AppendTermPolynomial(
-    int32_t *Exponents, 
     int32_t Coefficent, 
     uint8_t Variables,
+    int32_t *Exponents, 
     polynom_t *P){ 
 
     int i, j, s;

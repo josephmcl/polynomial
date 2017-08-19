@@ -18,15 +18,14 @@ void DestroyPolynomial(
     polynom_t *P);
 /* Cleans up a polynom_t. Free all members and itself.
  */
-int AppendTermPolynomial(
-    int32_t *Exponents, 
+int AppendTermPolynomial( 
     int32_t Coefficent, 
     uint8_t Variables,
+    int32_t *Exponents,
     polynom_t *P);
-/* Returns 0 on success, 1 on failure. Exponents should not be not be larger 
- * than 8. Exponents be the same size as the number of set bits in Variables. 
- * Variables represents the spesific variable to be used in the term. The nth 
- * set bit aligns with the n-1 index in Exponents.
+/* Returns 0 on success, 1 on failure. Variables represents the spesific 
+ * variable to be used in the term. The nth set bit aligns with the n-1 index in 
+ * Exponents.
  */
 float FunctionOfPolynomial(
     polynom_t *P, 
