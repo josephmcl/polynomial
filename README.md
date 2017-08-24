@@ -29,7 +29,7 @@ int main(int argc, char **argv) {
     // This will print +(3a^3)+(-2a^2b^6)+(4a^-4c^2)+(1)
     PrintPolynomial(P);
 
-    // This will print the result of 3(3^3)-2(3^2)(-2^6)+4(3^-4)(2.5^2)+(1)
+    // This will print the result of 3(3^3)-2(3^2)((-2)^6)+4(3^-4)(2.5^2)+(1)
     // which is -1069.691406
     printf("%f\n", FunctionOfPolynomial(P, &var));
     DestroyPolynomial(P);
