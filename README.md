@@ -12,7 +12,7 @@ int main(int argc, char **argv) {
     P = InitPolynomial();
 
     // Now allocate and initialize some some exponents
-    int32_t exp[8]; exp[0] = 3;
+    int exp[8]; exp[0] = 3;
 
     // Append some terms to the polynomial
     AppendTermPolynomial(3, 1, exp, P);
