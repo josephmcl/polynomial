@@ -1,7 +1,7 @@
 # polynomial
 A small n-degree polynomial implmentation.
 This design supports multivariate polynomials up to eight intermediates. 
-Intermediates are stored as set bits in the Variables field. The nth of each byte in Variables represents the same intermediate value at every index. Similarly the nth index of a polynom_var_t is applied to the intermediate at the nth set bit of Variables.
+Intermediates are stored as set bits in the Variables field of a polynom_t. The nth of each byte in Variables represents the same intermediate value at every index. Similarly the nth index of a polynom_var_t is applied to the intermediate at the nth set bit of Variables.
 ### Example
 ```c
 #include "polynomial.h"
