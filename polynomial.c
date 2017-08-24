@@ -1,11 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
-#ifdef _WINDOWS
-#include <malloc.h>
-#include <inttypes.h>
-#endif /* _WINDOWS */
-#include <stdint.h>
-
 #include "polynomial.h"
 
 struct polynom_s {

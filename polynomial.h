@@ -1,6 +1,14 @@
 #ifndef _POLYNOM_H
 #define _POLYNOM_H
 
+#include <stdio.h>
+#include <stdlib.h>
+#ifdef _WINDOWS
+#include <malloc.h>
+#include <inttypes.h>
+#endif /* _WINDOWS */
+#include <stdint.h>
+
 typedef struct polynom_s polynom_t;
 /* A struct representing a polynomial. Supports up to 8 variables 
  * (indeterminates).
