@@ -44,6 +44,10 @@ float FunctionOfPolynomial(
  */
 
 /*** Helpers ***/
+char *StringPolynomial(
+	polynom_t *P);
+/* Returns a string representation of P.
+*/
 void PrintPolynomial(
     polynom_t *P);
 /* Prints a string representation of P.
