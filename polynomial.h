@@ -45,7 +45,7 @@ float FunctionOfPolynomial(
 
 /*** Helpers ***/
 char *StringPolynomial(
-	polynom_t *P);
+    polynom_t *P);
 /* Returns a string representation of P.
 */
 void PrintPolynomial(
